@@ -39,7 +39,8 @@ Install Node.js (LTS), then:
 
 Passing run in the HTML report:
 
-![Passed report](docs/screenshots/passed-report.png)
+![Uploading passed-report.png.png…]()
+
 
 A deliberate failing check (expected 3 items, got 2) to see how failures look in the report:
 
