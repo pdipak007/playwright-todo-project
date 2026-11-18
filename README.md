@@ -39,20 +39,22 @@ Install Node.js (LTS), then:
 
 Passing run in the HTML report:
 
-![Uploading passed-report.png.png…]()
-
+<img width="1535" height="808" alt="passed-report png" src="https://github.com/user-attachments/assets/678c24be-028f-4ebd-a6ea-5d4e919680e6" />
 
 A deliberate failing check (expected 3 items, got 2) to see how failures look in the report:
 
-![Failed assertion](docs/screenshots/failed-assertion.png)
+<img width="1535" height="812" alt="failed-assertion png" src="https://github.com/user-attachments/assets/82f90a5f-3867-4018-b83f-6283f0eadf34" />
+
 
 Screenshot captured automatically on failure:
 
-![Failure screenshot](docs/screenshots/failure-screenshot.png)
+<img width="1517" height="813" alt="failure-screenshot png" src="https://github.com/user-attachments/assets/5a3582db-2304-41be-b316-05672077fdec" />
+
 
 Trace viewer showing each step:
 
-![Trace viewer](docs/screenshots/trace-viewer.png)
+<img width="1531" height="813" alt="trace-viewer png" src="https://github.com/user-attachments/assets/8eb81726-2585-4163-b2ac-5cf5d3505b91" />
+
 
 ## What I learned
 - A locator is how Playwright finds an element, and an assertion decides whether the test passes.
@@ -62,5 +64,3 @@ Trace viewer showing each step:
 - Reading the HTML report, the failure screenshot and the trace shows exactly which step failed and why.
 - A PowerShell quirk: tags like `@sanity` must be in quotes.
 
-## Next
-Building a larger Playwright + TypeScript project for an e-commerce demo site, with the Page Object Model.
