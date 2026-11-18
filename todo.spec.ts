@@ -1,0 +1,32 @@
+import { test, expect } from '@playwright/test';
+
+test('test to-do app @sanity', async ({ page }) => {
+  await page.goto('https://todomvc.com/examples/react/dist/');
+  await page.getByTestId('text-input').click();  await page.getByTestId('text-input').click();
+  await page.getByTestId('text-input').fill('Exercise');
+  await page.getByTestId('text-input').press('Enter');
+  await page.getByTestId('text-input').fill('BreakFast');
+  await page.getByTestId('text-input').press('Enter');
+  await page.getByTestId('text-input').fill('Go to School');
+  await page.getByTestId('text-input').press('Enter');
+  await page.getByTestId('text-input').fill('Lunch');
+  await page.getByTestId('text-input').press('Enter');
+  await page.getByTestId('text-input').fill('Study');
+  await page.getByTestId('text-input').press('Enter');
+  await page.getByTestId('toggle-all').check();
+  await page.getByRole('listitem').filter({ hasText: 'Study' }).getByTestId('todo-item-toggle').uncheck();
+  await page.getByRole('listitem').filter({ hasText: 'Lunch' }).getByTestId('todo-item-toggle').uncheck();
+  await page.getByRole('listitem').filter({ hasText: 'Go to School' }).getByTestId('todo-item-toggle').uncheck();
+  await page.getByRole('listitem').filter({ hasText: 'BreakFast' }).getByTestId('todo-item-toggle').uncheck();
+  await page.getByRole('listitem').filter({ hasText: 'Exercise' }).getByTestId('todo-item-toggle').uncheck();
+  await page.getByRole('link', { name: 'All' }).click();
+  await page.getByRole('listitem').filter({ hasText: 'Exercise' }).getByTestId('todo-item-toggle').check();
+  await page.getByRole('listitem').filter({ hasText: 'BreakFast' }).getByTestId('todo-item-toggle').check();
+  await page.getByRole('listitem').filter({ hasText: 'Go to School' }).getByTestId('todo-item-toggle').check();
+  await page.getByRole('link', { name: 'Active' }).click();
+  await page.getByRole('link', { name: 'All' }).click();
+  await expect(page.getByText('Lunch')).toBeVisible();
+  await expect(page.getByTestId('todo-list')).toContainText('Lunch');
+  await page.getByRole('link', { name: 'Active' }).click();
+  await expect(page.locator('.todo-list li')).toHaveCount(3);
+});
