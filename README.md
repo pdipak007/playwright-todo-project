@@ -33,7 +33,7 @@ Install Node.js (LTS), then:
 ## Project structure
 - `tests/todo.spec.ts` the test
 - `playwright.config.ts` browser, screenshot, video and trace settings
-- `docs/screenshots/` report, failure and trace screenshots
+- `*.png` report, failure and trace screenshots
 
 ## Screenshots
 
